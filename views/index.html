@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Socket.IO on raw Node.js server</title>
+		<!-- <script src="/socket.io/socket.io.js"></script> -->
+		<script src="https://cdn.socket.io/socket.io-1.4.0.js"></script>
+	</head>
+
+	<body>
+		Hola
+	</body>
+
+	<script>
+		var socket = io();
+		
+		socket.on('connect', function() {
+			console.log('connected');
+
+			var message = 'sending message : HI from socket.id = '+ socket.id;
+
+			console.log(message);
+			socket.emit('client_to_server', message);
+
+		});
+
+		socket.on('server_to_client', function(message) {
+			console.log('message from server :', message);
+		});
+
+		socket.on('disconnect', function() {
+			console.log('disconnected');
+		});
+
+	</script>
+
+</html>
