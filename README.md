@@ -1,15 +1,16 @@
 # socket.io-on-node.js
 Basic Socket.io implementation on Node.js
 
-# Prerequisites
+## Prerequisites
 Node.js
 
-# Installation
+## Installation
 ```
 npm install
 ```
 
-# Usage
+## Usage
 ```
 node server.js
 ```
+Goto localhost:3000 in any browser
